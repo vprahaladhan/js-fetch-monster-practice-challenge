@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('description').value = '';
     });
   });
-  
+
   document.getElementById('prev').addEventListener('click', () => {
     currentPage === 1 && fetchMonsters(--currentPage)
   });
