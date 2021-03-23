@@ -4,11 +4,12 @@ let currentPage = 1;
 let endOfMonsters = false;
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM Content Loaded');
   fetchMonsters(1);
   
   document.getElementById('monster-form').addEventListener('submit', event => {
     event.preventDefault();
-  
+
     fetch(url, {
       method: "POST",
       headers: {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         age: parseFloat(document.getElementById('age').value),
         description: document.getElementById('description').value
       })
-    }).then(response => {
+    }).then(() => {
       document.getElementById('name').value = '';
       document.getElementById('age').value = '';
       document.getElementById('description').value = '';
